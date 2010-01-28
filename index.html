@@ -3,37 +3,64 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
-    <link href="css/screen.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://www.css-reset.com/css/meyer.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.google.com/jsapi?key="></script>
+    <script type="text/javascript">google.load("jquery", 1);</script>
+    <script type="text/javascript">
+        $(function(){
+            $("h2 a").click(function(e){
+                $(this.href.match(/#.*?$/)[0]).slideToggle();
+                e.preventDefault();
+            });
+        });
+    </script>
+    <style type="text/css">
+        #flashIRC { display:none; }
+    </style>
     <title>ZF-users.jp - 日本の ZendFramework ユーザのためのハブサイト</title>
 </head>
 <body>
     
     <div id="header">
-        <a href="/"><img src="images/h1title.png" /></a>
-    </div>
-    
+        <h1><a href="/"><img src="images/h1title.png" /></a></h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">概要</a></li>
+            <li><a href="/">ダウンロード</a></li>
+            <li><a href="/">コミュニティ</a></li>
+            <li><a href="/">FAQ</a></li>
+        </ul>
+    <!-- End header --></div>
+
+
     <div id="content">
-        <h1>日本の ZendFramework ユーザのためのハブサイト</h1>
- 
-        <h2>IRC #zftalk-ja@freenode</h2>
-        
-        <iframe src="http://widget.mibbit.com/?settings=55e319e0fa6730de1ee78796a76a9217&server=irc.freenode.net&channel=%23zftalk-ja" width="750" height="500"></iframe>
+        <p>日本の ZendFramework ユーザのためのハブサイト</p>
+        <h2><a href="#flashIRC">IRC #zftalk-ja@freenode</a></h2>
+
+        <div id="flashIRC"><iframe src="http://widget.mibbit.com/?settings=55e319e0fa6730de1ee78796a76a9217&server=irc.freenode.net&channel=%23zftalk-ja" width="750" height="500"></iframe></div>
+
         <p>このサイトは <a href="http://github.com/wozozo/zf-users.jp/tree/master">github</a>で管理しています。</p>
 
         <p>なにかあれば → wozozo at gmail dot com</p>
-    </div>
+    <!-- End content --></div>
     
     <div id="footer">
-        <!-- Google Analytics -->
-        <script type="text/javascript">
-        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-        </script>
-        <script type="text/javascript">
-        var pageTracker = _gat._getTracker("UA-1709585-2");
-        pageTracker._initData();
-        pageTracker._trackPageview();
-        </script>
+        <address>@wozozo</address>
     </div>
+
+
+
+
+<!-- Google anaru -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-1709585-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
 </body>
 </html>
